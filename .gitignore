@@ -1,0 +1,13 @@
+config.py
+backend/config.py
+
+# Ignore all data files
+data/
+backend/data/
+*.json
+*.pdf
+*.index
+
+# Ignore compiled Python files
+__pycache__/
+*.pyc
