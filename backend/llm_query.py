@@ -1,12 +1,13 @@
 import openai
-from config import OPENAI_API_KEY
-import faiss
-import numpy as np
-import json
-from sentence_transformers import SentenceTransformer
+import streamlit as st
 
 # Set API Key
+OPENAI_API_KEY = st.secrets.get("OPENAI_API_KEY", None)
 
+if not OPENAI_API_KEY:
+    st.error("❌ OpenAI API key not found! Please add it to Streamlit secrets.")
+else:
+    openai.api_key = OPENAI_API_KEY
 client = openai.OpenAI(api_key=OPENAI_API_KEY)
 
 
