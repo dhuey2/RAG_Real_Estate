@@ -10,4 +10,4 @@ backend/data/
 
 # Ignore compiled Python files
 __pycache__/
-*.pyc
+*.pyc.streamlit/secrets.toml
