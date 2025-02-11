@@ -1,4 +1,3 @@
-import pdfplumber
 import json
 import os
 import re
