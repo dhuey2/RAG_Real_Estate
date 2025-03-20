@@ -5,7 +5,7 @@ import streamlit as st
 OPENAI_API_KEY = st.secrets.get("OPENAI_API_KEY", None)
 
 if not OPENAI_API_KEY:
-    st.error("❌ OpenAI API key not found! Please add it to Streamlit secrets.")
+    st.error("OpenAI API key not found! Please add it to Streamlit secrets.")
 else:
     openai.api_key = OPENAI_API_KEY
 client = openai.OpenAI(api_key=OPENAI_API_KEY)

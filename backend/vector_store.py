@@ -16,7 +16,7 @@ def create_faiss_index(embeddings):
     Create a FAISS index for the given embeddings.
     """
     dimension = len(embeddings[0])  # Length of each embedding vector
-    index = faiss.IndexFlatL2(dimension)  # L2 distance (Euclidean)
+    index = faiss.IndexFlatL2(dimension)  # L2 distance 
     index.add(np.array(embeddings, dtype='float32'))  # Add embeddings to the index
     return index
 

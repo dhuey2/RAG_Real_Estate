@@ -57,9 +57,6 @@ def clean_text_for_ner(text):
     # Normalize Unicode characters (e.g., fancy quotes → standard)
     text = unicodedata.normalize("NFKC", text)
 
-    # Replace non-breaking spaces with standard spaces
-    #text = text.replace("\xa0", " ")
-
     # Remove excessive whitespace
     text = re.sub(r'\s+', ' ', text).strip()
 
@@ -118,17 +115,6 @@ def save_chunks_to_file(chunks, file_path):
     print(f"Chunks saved to {file_path}")
 
 
-#test 0
-# if __name__ == "__main__":
-#     text = "Realty Publications, Inc. , P. O. BOX 5707, RIVERSIDE, CA 92517 ---- **Prepared by: Agent** Steve Johnson **Broker** Sam Slam **Phone** <PHONE>"
-#     anonymized = anonymize_text(text)
-#     text2 = "His email is bob@google.com. His phone number is 123-435-4597"
-#     anonymized2 = anonymize_structured_data(text2)
-#     print(anonymized)
-#     print(anonymized2)
-
-#     test_text = "Steve Johnson is a buyer."
-#     print(ner_pipeline(test_text))
 
 
 #test 1
@@ -137,13 +123,7 @@ if __name__ == "__main__":
     parsed_text = extract_text_with_pymupdf4llm(file_path)
     spaced_text = clean_text_for_ner(parsed_text)
     cleaned_text = clean_extracted_text(spaced_text)
-    #anonmyized_text = anonymize_text(cleaned_text)
-    #anonmyized_text = anonymize_structured_data(anonmyized_text)
-    
 
-    #print(anonmyized_text[:500])  # Print first 500 characters
-
-    #break the text into chunks of max size 256 tokens
 
     chunks = chunk_text(cleaned_text)
     anonymized_chunks = []

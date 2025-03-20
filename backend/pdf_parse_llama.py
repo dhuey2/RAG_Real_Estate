@@ -6,9 +6,9 @@ nest_asyncio.apply()
 
 # Initialize the LlamaParse parser
 parser = LlamaParse(
-    api_key=LLAMA_API_KEY,        # Your API key
-    result_type="text",     # Choose "text" or "markdown" based on your needs
-    verbose=True            # Set to True for detailed logs
+    api_key=LLAMA_API_KEY,        
+    result_type="text",    
+    verbose=True        
 )
 
 # Function to parse a document
